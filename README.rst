@@ -33,7 +33,19 @@ This project defines a new pytest-play_ command:
 
 ::
 
-    {'type': 'print', 'provider': 'play_mqtt'}
+    {"provider": "mqtt",
+     "type": "publish",
+     "host": "mqtthost".
+     "port": 20602.
+     "endpoint": 'JSON_MQTT/${device_id}',
+     "payload": {
+         "measure_id": [100],
+         "obj_id_L": [0],
+         "measureType": ["float"],
+         "start_time": 1514911926114,
+         "bin_value": [77251432]
+     }
+    }
 
 You can add more commands adding new methods to the command provider implementation in ``providers.py`` module.
 

@@ -12,17 +12,15 @@ with open('CHANGES.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    # TODO: put package requirements here
+    'paho',
 ]
 
 setup_requirements = [
     'pytest-runner',
-    # TODO(tierratelematics): put setup requirements (distutils extensions, etc.) here
 ]
 
 test_requirements = [
     'pytest',
-    # TODO: put package test requirements here
 ]
 
 setup(
@@ -36,7 +34,7 @@ setup(
     packages=find_packages(include=['play_mqtt']),
     entry_points={
         'playcommands': [
-            'print = play_mqtt.providers:NewProvider',
+            'mqtt = play_mqtt.providers:MQTTProvider',
         ],
     },
     include_package_data=True,
