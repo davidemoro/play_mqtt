@@ -11,7 +11,6 @@ class MQTTProvider(object):
 
     def command_publish(self, command):
         """ Publish a MQTT message """
-        command = json.loads(command)
         payload = json.dumps(command['payload'])
         self.mqttc.connect(
             command['host'],
