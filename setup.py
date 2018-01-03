@@ -12,7 +12,7 @@ with open('CHANGES.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'paho',
+    'paho-mqtt',
 ]
 
 setup_requirements = [
