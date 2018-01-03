@@ -6,9 +6,6 @@
 
 def test_provider():
     from play_mqtt import providers
-    print_provider = providers.NewProvider(None)
+    print_provider = providers.MQTTProvider(None)
     assert print_provider.engine is None
-    print_provider.command_print(
-        {'provider': 'play_mqtt',
-         'type': 'print',
-         'message': 'Hello, World!'})
+    assert print_provider.command_publish
