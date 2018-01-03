@@ -11,7 +11,8 @@ class MQTTProvider(object):
 
     def command_publish(self, command):
         """ Publish a MQTT message """
-        command = json.dumps(command)
+        command = json.loads(command)
+        payload = json.dumps(command['payload'])
         self.mqttc.connect(
             command['host'],
             port=int(command['port']))
@@ -21,6 +22,6 @@ class MQTTProvider(object):
         try:
             self.mqttc.publish(
                 command['endpoint'],
-                command['payload'])
+                payload)
         finally:
             self.mqttc.loop_stop(force=False)
