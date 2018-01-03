@@ -36,7 +36,7 @@ This project defines a new pytest-play_ command:
     {"provider": "mqtt",
      "type": "publish",
      "host": "$mqtt_host",
-     "port": $mqtt_port.
+     "port": $mqtt_port,
      "endpoint": '$mqtt_endpoint',
      "payload": {
          "measure_id": [100],
