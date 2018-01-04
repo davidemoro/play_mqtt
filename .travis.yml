@@ -6,7 +6,9 @@ python:
   - 2.7
 
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
+install: 
+  - pip install codecov
+  - pip install -U tox-travis
 
 # command to run tests, e.g. python setup.py test
 script: tox
