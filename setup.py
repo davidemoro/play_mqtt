@@ -21,11 +21,13 @@ setup_requirements = [
 
 test_requirements = [
     'pytest',
+    'mock',
+    'pytest-cov',
 ]
 
 setup(
     name='play_mqtt',
-    version='0.0.1',
+    version='0.0.2.dev0',
     description="pytest-play support for MQTT",
     long_description=readme + '\n\n' + history,
     author="Davide Moro",

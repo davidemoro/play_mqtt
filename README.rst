@@ -14,12 +14,19 @@ play mqtt
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/tierratelematics/play_mqtt/shield.svg
-     :target: https://pyup.io/repos/github/tierratelematics/play_mqtt/
-     :alt: Updates
+        :target: https://pyup.io/repos/github/tierratelematics/play_mqtt/
+        :alt: Updates
+
+.. image:: https://codecov.io/gh/tierratelematics/play_mqtt/branch/develop/graph/badge.svg
+        :target: https://codecov.io/gh/tierratelematics/play_mqtt
 
 
-pytest-play support for MQTT
+``pytest-play`` support for MQTT support.
 
+Thanks to ``play_mqtt`` you can test the integration between a mocked IoT
+device that sends commands on MQTT and a reactive web application with UI checks.
+
+You can also build a simulator that generates messages for you.
 
 * Free software: Apache Software License 2.0
 * Documentation: https://play-mqtt.readthedocs.io.
@@ -53,6 +60,9 @@ More info and examples on:
 
 * pytest-play_, documentation
 * cookiecutter-qa_, see ``pytest-play`` in action with a working example if you want to start hacking
+
+Thanks to pytest-play_ you can drive your tests or simulators through a configuration file containing
+an array of commands.
 
 Credits
 ---------
