@@ -14,8 +14,11 @@ play mqtt
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/tierratelematics/play_mqtt/shield.svg
-     :target: https://pyup.io/repos/github/tierratelematics/play_mqtt/
-     :alt: Updates
+        :target: https://pyup.io/repos/github/tierratelematics/play_mqtt/
+        :alt: Updates
+
+.. image:: https://codecov.io/gh/tierratelematics/play_mqtt/branch/develop/graph/badge.svg
+        :target: https://codecov.io/gh/tierratelematics/play_mqtt
 
 
 ``pytest-play`` support for MQTT support.
