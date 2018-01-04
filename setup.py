@@ -21,6 +21,7 @@ setup_requirements = [
 
 test_requirements = [
     'pytest',
+    'mock',
 ]
 
 setup(
