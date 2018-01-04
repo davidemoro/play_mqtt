@@ -1,29 +1,19 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 python:
-  - 3.6
-  - 2.7
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: 
-  - pip install codecov
-  - pip install -U tox-travis
-
-# command to run tests, e.g. python setup.py test
+- 3.6
+- 2.7
+install:
+- pip install codecov
+- pip install -U tox-travis
 script: tox
-
 after_success:
 - codecov
-
-# After you create the Github repo and add it to Travis, run the
-# travis_pypi_setup.py script to finish PyPI deployment setup
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   user: davidemoro
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: xVaGDXn1Zhb3coGPX1ETUjvOMTlwka4yoorfm7ib+Vk2U0xMxBr0CJhOWwJSWr7bKw/c3yU2jAxr35R2KZPmnvTfyd2k7rmhNPwenvFS8Vzqj+c+y0ROwQmQQwtyU/lumzjciSg7DTLTh4a0/ExlCRuZTFGg/+0nPwyH83zYYRB5DgDL5A81VMT/iyXCRC9i7JW5Uu9ebVw3tIIPRu22hPSBEDQ64GZfw7aFmw4030X3uSK0Glup5hWMsSf2p8DrqBeAvEpeoWdIOmLW+imomX/oB1BUg6Fm0KpnL18emuq8M+GncbSVdkVejqnOkGCAkH8ZzwkMyij9L0RB7gEwnuQn+Z/vbil+vJp0a8Q8r/uwIB33INtZM+EDJnYqJdFswwuE1uehtOuN8tqAYL2JC3xABk3a7sGG12z44RY+NknCR3L6aUkd+onxEUZRW5Hz81hYlTDw7XpH5iK9EJcTHQrxgKUa2Uy5fFmroqB73CIpWdQkUU1tuPoBmSt7s2vb04ne4Dfny27kKyf12aBsaUpuUgDbL9ssBixbLzpJ36gPRTqt0u0ntT9ALKiy/y4ZR3VIw94gy74oDOJ1kZyykG7uFt8iAe8i9VtOzHY9CaxmxY7t9pQf62fLCnH4L1iceLviOhUW3cB6e6cJmRjQnHoDqj6hxIPa2YhgFNct47c=
   on:
     tags: true
     repo: tierratelematics/play_mqtt
