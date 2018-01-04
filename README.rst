@@ -18,8 +18,12 @@ play mqtt
      :alt: Updates
 
 
-pytest-play support for MQTT
+``pytest-play`` support for MQTT support.
 
+Thanks to ``play_mqtt`` you can test the integration between a mocked IoT
+device that sends commands on MQTT and a reactive web application with UI checks.
+
+You can also build a simulator that generates messages for you.
 
 * Free software: Apache Software License 2.0
 * Documentation: https://play-mqtt.readthedocs.io.
