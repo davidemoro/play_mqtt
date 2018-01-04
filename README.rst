@@ -61,6 +61,9 @@ More info and examples on:
 * pytest-play_, documentation
 * cookiecutter-qa_, see ``pytest-play`` in action with a working example if you want to start hacking
 
+Thanks to pytest-play_ you can drive your tests or simulators through a configuration file containing
+an array of commands.
+
 Credits
 ---------
 
