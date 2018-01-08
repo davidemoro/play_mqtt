@@ -9,7 +9,7 @@ class MQTTProvider(object):
         self.engine = engine
         self.mqttc = mqtt.Client()
 
-    def command_publish(self, command):
+    def command_publish(self, command, **kwargs):
         """ Publish a MQTT message """
         payload = json.dumps(command['payload'])
         self.mqttc.connect(

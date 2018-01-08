@@ -5,7 +5,7 @@ CHANGES
 0.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Commands accept kwargs now
 
 
 0.0.1 (2018-01-04)
