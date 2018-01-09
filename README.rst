@@ -28,8 +28,10 @@ device that sends commands on MQTT and a reactive web application with UI checks
 
 You can also build a simulator that generates messages for you.
 
-* Free software: Apache Software License 2.0
-* Documentation: https://play-mqtt.readthedocs.io.
+More info and examples on:
+
+* pytest-play_, documentation
+* cookiecutter-qa_, see ``pytest-play`` in action with a working example if you want to start hacking
 
 
 Features
@@ -64,6 +66,13 @@ More info and examples on:
 Thanks to pytest-play_ you can drive your tests or simulators through a configuration file containing
 an array of commands.
 
+Twitter
+=======
+
+``pytest-play`` tweets happens here:
+
+* `@davidemoro`_
+
 Credits
 ---------
 
@@ -74,4 +83,4 @@ This package was created with Cookiecutter_ and the cookiecutter-play-plugin_ (b
 .. _`cookiecutter-play-plugin`: https://github.com/tierratelematics/cookiecutter-play-plugin
 .. _pytest-play: https://github.com/tierratelematics/pytest-play
 .. _cookiecutter-qa: https://github.com/tierratelematics/cookiecutter-qa
-
+.. _`@davidemoro`: https://twitter.com/davidemoro
