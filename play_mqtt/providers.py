@@ -1,12 +1,13 @@
 import json
 import paho.mqtt.client as mqtt
+from pytest_play.providers import BaseProvider
 
 
-class MQTTProvider(object):
+class MQTTProvider(BaseProvider):
     """ MQTT provider """
 
     def __init__(self, engine):
-        self.engine = engine
+        super(MQTTProvider, self).__init__(engine)
         self.mqttc = mqtt.Client()
 
     def command_publish(self, command, **kwargs):

@@ -35,8 +35,7 @@ More info and examples on:
 
 
 Features
---------
-
+========
 
 This project defines a new pytest-play_ command:
 
@@ -56,16 +55,6 @@ This project defines a new pytest-play_ command:
      }
     }
 
-You can add more commands adding new methods to the command provider implementation in ``providers.py`` module.
-
-More info and examples on:
-
-* pytest-play_, documentation
-* cookiecutter-qa_, see ``pytest-play`` in action with a working example if you want to start hacking
-
-Thanks to pytest-play_ you can drive your tests or simulators through a configuration file containing
-an array of commands.
-
 Twitter
 =======
 
@@ -74,7 +63,7 @@ Twitter
 * `@davidemoro`_
 
 Credits
----------
+=======
 
 This package was created with Cookiecutter_ and the cookiecutter-play-plugin_ (based on `audreyr/cookiecutter-pypackage`_ project template).
 
