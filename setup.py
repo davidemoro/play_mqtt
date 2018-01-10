@@ -13,6 +13,7 @@ with open('CHANGES.rst') as history_file:
 
 requirements = [
     'paho-mqtt',
+    'pytest-play>=1.0.0',
 ]
 
 setup_requirements = [
@@ -27,7 +28,7 @@ test_requirements = [
 
 setup(
     name='play_mqtt',
-    version='0.0.2.dev0',
+    version='0.0.3.dev0',
     description="pytest-play support for MQTT",
     long_description=readme + '\n\n' + history,
     author="Davide Moro",
@@ -60,4 +61,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     setup_requires=setup_requirements,
+    extras_require={
+        'tests': test_requirements,
+    },
 )
