@@ -13,7 +13,7 @@ with open('CHANGES.rst') as history_file:
 
 requirements = [
     'paho-mqtt',
-    'pytest-play',
+    'pytest-play>=1.0.0',
 ]
 
 setup_requirements = [
