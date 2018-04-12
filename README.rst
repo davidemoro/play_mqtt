@@ -6,15 +6,15 @@ play mqtt
 .. image:: https://img.shields.io/pypi/v/play_mqtt.svg
         :target: https://pypi.python.org/pypi/play_mqtt
 
-.. image:: https://img.shields.io/travis/tierratelematics/play_mqtt.svg
-        :target: https://travis-ci.org/tierratelematics/play_mqtt
+.. image:: https://img.shields.io/travis/davidemoro/play_mqtt.svg
+        :target: https://travis-ci.org/davidemoro/play_mqtt
 
 .. image:: https://readthedocs.org/projects/play-mqtt/badge/?version=latest
         :target: https://play-mqtt.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://codecov.io/gh/tierratelematics/play_mqtt/branch/develop/graph/badge.svg
-        :target: https://codecov.io/gh/tierratelematics/play_mqtt
+.. image:: https://codecov.io/gh/davidemoro/play_mqtt/branch/develop/graph/badge.svg
+        :target: https://codecov.io/gh/davidemoro/play_mqtt
 
 
 ``pytest-play`` support for MQTT support.
@@ -65,7 +65,7 @@ This package was created with Cookiecutter_ and the cookiecutter-play-plugin_ (b
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-.. _`cookiecutter-play-plugin`: https://github.com/tierratelematics/cookiecutter-play-plugin
-.. _pytest-play: https://github.com/tierratelematics/pytest-play
-.. _cookiecutter-qa: https://github.com/tierratelematics/cookiecutter-qa
+.. _`cookiecutter-play-plugin`: https://github.com/davidemoro/cookiecutter-play-plugin
+.. _pytest-play: https://github.com/pytest-dev/pytest-play
+.. _cookiecutter-qa: https://github.com/davidemoro/cookiecutter-qa
 .. _`@davidemoro`: https://twitter.com/davidemoro
