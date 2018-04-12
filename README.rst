@@ -6,8 +6,8 @@ play mqtt
 .. image:: https://img.shields.io/pypi/v/play_mqtt.svg
         :target: https://pypi.python.org/pypi/play_mqtt
 
-.. image:: https://img.shields.io/travis/davidemoro/play_mqtt.svg
-        :target: https://travis-ci.org/davidemoro/play_mqtt
+.. image:: https://travis-ci.org/davidemoro/play_mqtt.svg?branch=develop
+       :target: https://travis-ci.org/davidemoro/play_mqtt
 
 .. image:: https://readthedocs.org/projects/play-mqtt/badge/?version=latest
         :target: https://play-mqtt.readthedocs.io/en/latest/?badge=latest
