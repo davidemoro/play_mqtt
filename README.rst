@@ -66,6 +66,6 @@ This package was created with Cookiecutter_ and the cookiecutter-play-plugin_ (b
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 .. _`cookiecutter-play-plugin`: https://github.com/davidemoro/cookiecutter-play-plugin
-.. _pytest-play: https://github.com/pytest-dev/pytest-play
+.. _pytest-play: https://github.com/davidemoro/pytest-play
 .. _cookiecutter-qa: https://github.com/davidemoro/cookiecutter-qa
 .. _`@davidemoro`: https://twitter.com/davidemoro
