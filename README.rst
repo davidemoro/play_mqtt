@@ -37,19 +37,25 @@ This project defines a new pytest-play_ command:
 
 ::
 
-    {"provider": "mqtt",
-     "type": "publish",
-     "host": "$mqtt_host",
-     "port": $mqtt_port,
-     "endpoint": '$mqtt_endpoint',
-     "payload": {
-         "measure_id": [100],
-         "obj_id_L": [0],
-         "measureType": ["float"],
-         "start_time": 1514911926114,
-         "bin_value": [77251432]
-     }
-    }
+    - provider: mqtt
+      type: publish
+      host: "$mqtt_host"
+      port: $mqtt_port
+      endpoint: "$mqtt_endpoint"
+      payload: '{
+        "endpoint": "$mqtt_endpoint",
+        "payload": {
+          "obj_id_L": [0],
+          "bin_value": [77251432],
+          "measure_id": [100],
+          "measureType": ["float"],
+          "start_time": 1514911926114
+        },
+        "host": "$mqtt_host",
+        "provider": "mqtt",
+        "type": "publish",
+        "port": "$mqtt_port"}'
+
 
 Twitter
 =======
