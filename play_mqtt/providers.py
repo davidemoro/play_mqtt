@@ -1,4 +1,3 @@
-import json
 import paho.mqtt.client as mqtt
 from pytest_play.providers import BaseProvider
 
@@ -12,7 +11,6 @@ class MQTTProvider(BaseProvider):
 
     def command_publish(self, command, **kwargs):
         """ Publish a MQTT message """
-        payload = json.dumps(command['payload'])
         self.mqttc.connect(
             command['host'],
             port=int(command['port']))
@@ -22,6 +20,6 @@ class MQTTProvider(BaseProvider):
         try:
             self.mqttc.publish(
                 command['endpoint'],
-                payload)
+                command['payload'])
         finally:
             self.mqttc.loop_stop(force=False)

@@ -13,7 +13,7 @@ with open('CHANGES.rst') as history_file:
 
 requirements = [
     'paho-mqtt',
-    'pytest-play>=1.0.0',
+    'pytest-play>=2.0.0',
 ]
 
 setup_requirements = [
@@ -33,7 +33,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Davide Moro",
     author_email='davide.moro@gmail.com',
-    url='https://github.com/tierratelematics/play_mqtt',
+    url='https://github.com/davidemoro/play_mqtt',
     packages=find_packages(include=['play_mqtt']),
     entry_points={
         'playcommands': [

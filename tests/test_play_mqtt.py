@@ -4,7 +4,6 @@
 """Tests for `play_mqtt` package."""
 
 import mock
-import json
 
 
 def test_provider():
@@ -28,7 +27,7 @@ def test_provider_command():
             'host': 'host',
             'port': 10,
             'endpoint': 'some/endpoint',
-            'payload': {'foo': 'bar'}
+            'payload': '{"foo": "bar"}'
         }
         provider.command_publish(command)
 
@@ -38,4 +37,4 @@ def test_provider_command():
         assert provider.mqttc.loop_stop.assert_called_once_with(
             force=False) is None
         assert provider.mqttc.publish.assert_called_once_with(
-            command['endpoint'], json.dumps(command['payload'])) is None
+            command['endpoint'], command['payload']) is None
