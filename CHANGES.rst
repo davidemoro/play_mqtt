@@ -5,7 +5,7 @@ CHANGES
 0.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix pypi README rendering (rif #7)
 
 
 0.0.3 (2019-01-25)
