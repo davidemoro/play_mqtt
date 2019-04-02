@@ -56,6 +56,34 @@ This project defines a new pytest-play_ command:
         "type": "publish",
         "port": "$mqtt_port"}'
 
+Subscribe command::
+
+    test_data:
+      - data: hello
+    ---
+    - provider: mqtt
+      type: subscribe
+      host: iot.eclipse.org
+      port: 1883
+      topic: "home/bedroom/light"
+    - provider: mqtt
+      type: publish
+      host: iot.eclipse.org
+      port: 1883
+      endpoint: "home/bedroom/light"
+      payload: $data
+    - provider: python
+      type: wait_until
+      timeout: 6
+      expression: 'len(variables["home/bedroom/light"]) == 1'
+      poll: 0.1
+      sub_commands: []
+    - provider: python
+      type: assert
+      expression: 'len(variables["home/bedroom/light"]) == 1'
+    - provider: python
+      type: assert
+      expression: 'variables["home/bedroom/light"][0] == "$data"'
 
 Twitter
 -------

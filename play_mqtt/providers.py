@@ -5,21 +5,43 @@ from pytest_play.providers import BaseProvider
 class MQTTProvider(BaseProvider):
     """ MQTT provider """
 
-    def __init__(self, engine):
-        super(MQTTProvider, self).__init__(engine)
-        self.mqttc = mqtt.Client()
-
     def command_publish(self, command, **kwargs):
         """ Publish a MQTT message """
-        self.mqttc.connect(
+        mqttc = mqtt.Client()
+        mqttc.connect(
             command['host'],
             port=int(command['port']))
 
-        self.mqttc.loop_start()
+        mqttc.loop_start()
 
         try:
-            self.mqttc.publish(
+            mqttc.publish(
                 command['endpoint'],
                 command['payload'])
         finally:
-            self.mqttc.loop_stop(force=False)
+            mqttc.loop_stop(force=False)
+
+    def command_subscribe(self, command, **kwargs):
+        """ Subscribe to a topic or list of topics """
+        topic = command['topic']
+        encoding = command.get('encoding', 'utf-8')
+        if not hasattr(self.engine, '_mqtt'):
+            self.engine._mqtt = {}
+        self.engine.variables[topic] = []
+
+        def on_connect(client, userdata, flags, rc):
+            client.subscribe(topic)
+
+        def on_message(client, userdata, msg):
+            userdata.append(msg.payload.decode(encoding))
+        self.engine._mqtt[topic] = client = mqtt.Client(
+            userdata=self.engine.variables[topic])
+        client.on_connect = on_connect
+        client.on_message = on_message
+        client.connect(
+            command['host'],
+            port=int(command['port'])
+        )
+        client.loop_start()
+        self.engine.register_teardown_callback(
+            client.loop_stop)
