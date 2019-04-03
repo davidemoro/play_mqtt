@@ -2,7 +2,7 @@
 CHANGES
 =======
 
-0.0.5 (unreleased)
+0.0.5 (2019-04-03)
 ------------------
 
 - Implement ``subscribe`` command

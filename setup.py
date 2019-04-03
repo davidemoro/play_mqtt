@@ -28,7 +28,7 @@ test_requirements = [
 
 setup(
     name='play_mqtt',
-    version='0.0.5.dev0',
+    version='0.0.5',
     description="pytest-play support for MQTT",
     long_description=readme + '\n\n' + history,
     author="Davide Moro",
