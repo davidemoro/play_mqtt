@@ -5,7 +5,7 @@ CHANGES
 0.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Implement ``subscribe`` command
 
 
 0.0.4 (2019-01-26)
