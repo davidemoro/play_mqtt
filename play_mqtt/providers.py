@@ -25,23 +25,21 @@ class MQTTProvider(BaseProvider):
         """ Subscribe to a topic or list of topics """
         topic = command['topic']
         encoding = command.get('encoding', 'utf-8')
+        name = command['name']
         if not hasattr(self.engine, '_mqtt'):
             self.engine._mqtt = {}
-        self.engine.variables[topic] = []
-
-        def on_connect(client, userdata, flags, rc):
-            client.subscribe(topic)
+        self.engine.variables[name] = []
 
         def on_message(client, userdata, msg):
             userdata.append(msg.payload.decode(encoding))
-        self.engine._mqtt[topic] = client = mqtt.Client(
-            userdata=self.engine.variables[topic])
-        client.on_connect = on_connect
+        self.engine._mqtt[name] = client = mqtt.Client(
+            userdata=self.engine.variables[name])
         client.on_message = on_message
         client.connect(
             command['host'],
             port=int(command['port'])
         )
+        client.subscribe(topic)
         client.loop_start()
         self.engine.register_teardown_callback(
             client.loop_stop)

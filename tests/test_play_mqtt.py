@@ -56,23 +56,42 @@ def test_provider_command_publish(fake_engine):
                 command['endpoint'], command['payload']) is None
 
 
-def test_provider_command_subscribe(fake_engine):
+@pytest.mark.parametrize("command", [
+    {
+        'type': 'subscribe',
+        'provider': 'mqtt',
+        'host': 'host',
+        'port': 10,
+        'name': 'some_endpoint_messages',
+        'topic': 'some/endpoint',
+    },
+    {
+        'type': 'subscribe',
+        'provider': 'mqtt',
+        'host': 'host',
+        'port': 10,
+        'name': 'some_endpoint_messages',
+        'topic': ("my/topic", 1)
+    },
+    {
+        'type': 'subscribe',
+        'provider': 'mqtt',
+        'host': 'host',
+        'port': 10,
+        'name': 'some_endpoint_messages',
+        'topic': [("my/topic", 0), ("another/topic", 2)]
+    },
+])
+def test_provider_command_subscribe(fake_engine, command):
     import mock
     with mock.patch('play_mqtt.providers.mqtt') as mock_mqtt:
         from play_mqtt import providers
         provider = providers.MQTTProvider(fake_engine)
 
-        command = {
-            'type': 'subscribe',
-            'provider': 'mqtt',
-            'host': 'host',
-            'port': 10,
-            'topic': 'some/endpoint',
-        }
         assert fake_engine.variables == {}
         provider.command_subscribe(command)
 
-        assert provider.engine.variables['some/endpoint'] == []
+        assert provider.engine.variables[command['name']] == []
         assert mock_mqtt.Client.assert_called_once_with(
             userdata=[]) is None
         assert mock_mqtt \
@@ -107,6 +126,7 @@ def test_provider_command_subscribe(fake_engine):
         Message = collections.namedtuple("Message", ["payload"])
         mock_mqtt.Client.return_value.on_message(
             mock_mqtt.Client.return_value,
-            fake_engine.variables[command['topic']],
+            fake_engine.variables[command['name']],
             Message(payload=b'foo'))
-        assert provider.engine.variables['some/endpoint'] == ['foo']
+        assert provider.engine.variables[
+            command['name']] == ['foo']

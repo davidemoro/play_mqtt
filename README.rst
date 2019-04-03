@@ -59,13 +59,14 @@ This project defines a new pytest-play_ command:
 Subscribe command::
 
     test_data:
-      - data: hello
+      - data: ciao1
     ---
     - provider: mqtt
       type: subscribe
       host: iot.eclipse.org
       port: 1883
       topic: "home/bedroom/light"
+      name: "messages"
     - provider: mqtt
       type: publish
       host: iot.eclipse.org
@@ -75,15 +76,15 @@ Subscribe command::
     - provider: python
       type: wait_until
       timeout: 6
-      expression: 'len(variables["home/bedroom/light"]) == 1'
+      expression: 'len(variables["messages"]) == 1'
       poll: 0.1
       sub_commands: []
     - provider: python
       type: assert
-      expression: 'len(variables["home/bedroom/light"]) == 1'
+      expression: 'len(variables["messages"]) == 1'
     - provider: python
       type: assert
-      expression: 'variables["home/bedroom/light"][0] == "$data"'
+      expression: 'variables["messages"][0] == "$data"'
 
 Twitter
 -------
